@@ -50,6 +50,8 @@ Every document follows the chain-reaction pattern:
 - [FLUX-TO-PTX.md](FLUX-TO-PTX.md) — The compilation pipeline from intent to silicon
 
 ### For Agent Builders
+- [VISUALIZING-TERNARY-DATA.md](VISUALIZING-TERNARY-DATA.md) — Making {-1, 0, +1} visible
+- [COST-ECONOMICS.md](COST-ECONOMICS.md) — The dollar math of ternary computing
 - [TROUBLESHOOTING.md](TROUBLESHOOTING.md) — When the ternary world does not make sense
 - [THE-CLI-REFERENCE.md](THE-CLI-REFERENCE.md) — Command-line tools for agent operations
 - [INTEGRATING-WITH-EXISTING-ML.md](INTEGRATING-WITH-EXISTING-ML.md) — Ternary weights in PyTorch and TensorFlow
