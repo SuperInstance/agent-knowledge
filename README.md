@@ -60,6 +60,8 @@ Every document follows the chain-reaction pattern:
 - [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding your own crates to the fleet
 
 ### Meta-Documentation
+- [PERFORMANCE-OPTIMIZATION.md](PERFORMANCE-OPTIMIZATION.md) — Making ternary code fly
+- [RESEARCH-METHODOLOGY.md](RESEARCH-METHODOLOGY.md) — How new ideas enter the ecosystem
 - [GLOSSARY.md](GLOSSARY.md) — 23 terms that unlock the entire ecosystem
 - [VERSIONING-AND-COMPATIBILITY.md](VERSIONING-AND-COMPATIBILITY.md) — 303 crates, one moving target
 - [LOOM-TAPESTRY.md](LOOM-TAPESTRY.md) — Why documentation is the deepest engineering
