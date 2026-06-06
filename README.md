@@ -46,6 +46,8 @@ Every document follows the chain-reaction pattern:
 - [FLUX-TO-PTX.md](FLUX-TO-PTX.md) — The compilation pipeline from intent to silicon
 
 ### For Agent Builders
+- [BENCHMARKING-TERNARY.md](BENCHMARKING-TERNARY.md) — Reproducible methodology for the 16× claim
+- [DEBUGGING-AND-TRACING.md](DEBUGGING-AND-TRACING.md) — Following intent through five layers
 - [HOW-TO-FLEX.md](HOW-TO-FLEX.md) — Using openmind's muscle memory API
 - [HOW-TO-INGEST.md](HOW-TO-INGEST.md) — Making any codebase into chord shapes
 - [HOW-TO-CONDUCT.md](HOW-TO-CONDUCT.md) — Orchestrating multiple agents with shared muscle memory
