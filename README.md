@@ -32,6 +32,7 @@ Every document follows the chain-reaction pattern:
 - [THE-AGENT-LOOP.md](THE-AGENT-LOOP.md) — Perception, reasoning, and action as a coupled dynamical system
 - [THE-NAIL-FORMAT.md](THE-NAIL-FORMAT.md) — Caching consciousness in zero tokens
 - [FAULT-TOLERANCE.md](FAULT-TOLERANCE.md) — Ternary degradation is graceful by default
+- [MEMORY-ARCHITECTURE.md](MEMORY-ARCHITECTURE.md) — Five-tier memory topology from GPU registers to persistent stores
 - [MUSCLE-MEMORY.md](MUSCLE-MEMORY.md) — Proprioception for agents: chord shapes, flex, recall
 - [TRIPARTITE-SYNC.md](TRIPARTITE-SYNC.md) — HARDCODE/MODEL/HYBRID/CACHED: when to think, when to act
 - [CONTEXT-WINDOW-ECONOMICS.md](CONTEXT-WINDOW-ECONOMICS.md) — Attention is the scarce resource
@@ -42,6 +43,7 @@ Every document follows the chain-reaction pattern:
 - [THE-PACKED-FORMAT.md](THE-PACKED-FORMAT.md) — How 20 trits fit in 32 bits, the 2-bit encoding
 - [TERNARY-NUMBERS.md](TERNARY-NUMBERS.md) — Why {-1, 0, +1} is the most powerful three symbols
 - [TERNARY-QUANTIZATION.md](TERNARY-QUANTIZATION.md) — Quantizing neural networks to {-1, 0, +1} weights
+- [SPARSITY-IN-TERNARY-SYSTEMS.md](SPARSITY-IN-TERNARY-SYSTEMS.md) — Why zero is a first-class symbol, not truncation
 - [FLEET-MAP.md](FLEET-MAP.md) — 303 crates, their relationships, and how to navigate them
 - [CRATE-PATTERNS.md](CRATE-PATTERNS.md) — Every crate follows one of 7 patterns. Learn them.
 - [TESTING-AS-PROOF.md](TESTING-AS-PROOF.md) — The test suite is a theorem prover with 5,300 lemmas
