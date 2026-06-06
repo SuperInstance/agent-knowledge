@@ -2,35 +2,47 @@
 
 ## Hook
 
-> Physics has three conservation laws that are really one symmetry viewed from three angles.
-> SuperInstance has three too. And they're also the same law.
+> Physics has three conservation laws — energy, momentum, charge — that are really one symmetry viewed from three angles.
+> SuperInstance has three conservation laws too. And they're also the same law.
 
 ## Reveal
 
-There is only one conservation law in this ecosystem. It says: **structured intention is invariant under transformation.** It appears at three scales with three names. What changes is the currency. The law doesn't.
+There is only one conservation law in this ecosystem. It operates at three scales, and at every scale it says the same thing: **the total quantity of structured intention is invariant under transformation.** What changes is the name we give it.
+
+At the micro scale, we call it **verification entropy** — correctness preserved across compilation layers.
+At the meso scale, we call it **attention economics** — cognitive budget preserved across agent invocations.
+At the macro scale, we call it **ternary structure** — informational topology preserved across domain boundaries.
+
+These aren't three laws. They're one law with three faces, like energy appearing as kinetic, potential, and thermal. And just as c (the speed of light) is the conversion constant between mass and energy, there is a conversion constant here too: **the ternary isomorphism coefficient, α₃ ≈ 0.97.**
 
 ---
 
-### Law 1: Verification Entropy (Micro Scale)
+### Law 1: Conservation of Verification Entropy (The Micro Scale)
 
-Correctness doesn't disappear when you compile it. It changes form.
+A function's correctness doesn't disappear when you compile it. It changes form.
 
-| Level | Entropy | State |
-|-------|---------|-------|
-| 0 | Unwritten | Idea only |
-| 1 | Written | Code exists |
-| 2 | Tested | Happy path verified |
-| 3 | Property-tested | Fuzzed across space |
-| 4 | Proven | Formal verification |
-| 5 | HARDCODE-inducted | Runtime-validated, memorized |
+| Form | Entropy Value | What It Represents |
+|------|---------------|-------------------|
+| Unwritten idea | 0 | No structure, no guarantees |
+| Code, untested | 1 | Structure exists, unverified |
+| Tested | 2 | Happy-path verified |
+| Property-tested | 3 | Fuzzed across input space |
+| Formally proven | 4 | Mathematically verified |
+| HARDCODE-inducted | 5 | Runtime-validated, muscle-memorized |
 
-When `tdot` is proven in `ternary-core` (entropy 4), then compiled to Flux bytecode, then to PTX, then to GPU binary — the entropy stays at 4. Each layer generates a **witness**: bytecode matches Rust, PTX matches bytecode, kernel matches PTX. The proof transforms; it doesn't vanish.
+The law:
 
-Most ecosystems leak correctness. You test at Layer 1, deploy at Layer 5, and hope. SuperInstance compresses the chain of trust. The proof at layer N implies the proof at layer N+1.
+```
+Σ(entropy of all functions) = constant across transformations
+```
+
+When `tdot` is proven correct in `ternary-core` (entropy 4), then compiled to Flux bytecode, then to PTX, then to GPU binary — the entropy stays at 4. Each layer generates a **witness**: bytecode matches Rust, PTX matches bytecode, kernel matches PTX. The proof transforms; it doesn't vanish.
+
+Most ecosystems *leak* correctness. You test at Layer 1, deploy at Layer 5, and hope. SuperInstance *compresses* the chain of trust. The proof at layer N implies the proof at layer N+1.
 
 ---
 
-### Law 2: Attention Economics (Meso Scale)
+### Law 2: Conservation of Attention Economics (The Meso Scale)
 
 An agent's context window is fixed. Every token spent on "how does this work" is a token stolen from "what should I build."
 
@@ -38,20 +50,23 @@ An agent's context window is fixed. Every token spent on "how does this work" is
 Total Attention = Muscle Memory Tokens + Improvisation Tokens = constant
 ```
 
-| Mode | Cost per function | 6,000 functions |
-|------|-------------------|-----------------|
-| Without muscle memory | 250 tokens | 1,500,000 tokens (12× overflow) |
-| With muscle memory | 5 tokens | 30,000 tokens (23% of 128k) |
+For a 128k context window:
+- Without muscle memory: 6,000 functions × 250 tokens each = 1,500,000 tokens → **impossible** (12× overflow)
+- With muscle memory: 6,000 functions × 5 tokens each = 30,000 tokens → **comfortable** (23% of budget)
 
 The 1,470,000 tokens you didn't spend on loading source? **Conserved** — transformed from comprehension overhead into creative capacity.
 
-This is the same law as verification entropy. One scale up. Instead of asking "did we lose correctness?" we ask "did we lose cognition?" Both answers: no. The structure is preserved.
+This is the same law as verification entropy, just one scale up:
+- **Verification entropy** asks: "Did we lose correctness?"
+- **Attention economics** asks: "Did we lose cognitive resources?"
+
+Both answers are no. The structure is preserved. What changes is the *currency* — from "test coverage" to "available tokens."
 
 ---
 
-### Law 3: Ternary Structure (Macro Scale)
+### Law 3: Conservation of Ternary Structure (The Macro Scale)
 
-All 303 crates are the same mathematical structure with different labels.
+At the largest scale, the law governs information itself. All 303 crates are the same mathematical structure viewed from different domains.
 
 | Domain | {-1} | {0} | {+1} |
 |--------|------|-----|------|
