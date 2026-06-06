@@ -58,8 +58,10 @@ Every document follows the chain-reaction pattern:
 ### For Agent Builders
 - [VISUALIZING-TERNARY-DATA.md](VISUALIZING-TERNARY-DATA.md) — Making {-1, 0, +1} visible
 - [COST-ECONOMICS.md](COST-ECONOMICS.md) — The dollar math of ternary computing
+- [CONSTRUCT-ECONOMICS.md](CONSTRUCT-ECONOMICS.md) — Markets, pricing, and value flow for agent-generated capabilities
 - [TROUBLESHOOTING.md](TROUBLESHOOTING.md) — When the ternary world does not make sense
 - [THE-CLI-REFERENCE.md](THE-CLI-REFERENCE.md) — Command-line tools for agent operations
+- [MULTI-MODALITY.md](MULTI-MODALITY.md) — Thinking in vision, audio, text, and proprioception
 - [INTEGRATING-WITH-EXISTING-ML.md](INTEGRATING-WITH-EXISTING-ML.md) — Ternary weights in PyTorch and TensorFlow
 - [MIGRATING-TO-TERNARY.md](MIGRATING-TO-TERNARY.md) — Porting binary code to {-1, 0, +1}
 - [SECURITY-MODEL.md](SECURITY-MODEL.md) — Ternary permissions and threat topology
