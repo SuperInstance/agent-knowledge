@@ -69,6 +69,8 @@ Every document follows the chain-reaction pattern:
 - [HOW-TO-FLEX.md](HOW-TO-FLEX.md) — Using openmind's muscle memory API
 - [HOW-TO-INGEST.md](HOW-TO-INGEST.md) — Making any codebase into chord shapes
 - [HOW-TO-CONDUCT.md](HOW-TO-CONDUCT.md) — Orchestrating multiple agents with shared muscle memory
+- [REASONING-AND-PLANNING.md](REASONING-AND-PLANNING.md) — The layered stack of agent cognition
+- [ONLINE-LEARNING.md](ONLINE-LEARNING.md) — Continuous improvement from the stream of experience
 - [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding your own crates to the fleet
 
 ### Meta-Documentation
