@@ -65,6 +65,8 @@ Every document follows the chain-reaction pattern:
 - [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding your own crates to the fleet
 
 ### Meta-Documentation
+- [ANTI-PATTERNS.md](ANTI-PATTERNS.md) — What not to do in ternary systems
+- [THE-MANIFESTO.md](THE-MANIFESTO.md) — Why we build this way
 - [THE-COOKBOOK.md](THE-COOKBOOK.md) — 12 recipes for common ternary tasks
 - [FAQ.md](FAQ.md) — Questions agents actually ask
 - [GOVERNANCE-AND-COMMUNITY.md](GOVERNANCE-AND-COMMUNITY.md) — How the ecosystem decides
