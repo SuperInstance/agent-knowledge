@@ -46,6 +46,8 @@ Every document follows the chain-reaction pattern:
 - [FLUX-TO-PTX.md](FLUX-TO-PTX.md) — The compilation pipeline from intent to silicon
 
 ### For Agent Builders
+- [MIGRATING-TO-TERNARY.md](MIGRATING-TO-TERNARY.md) — Porting binary code to {-1, 0, +1}
+- [SECURITY-MODEL.md](SECURITY-MODEL.md) — Ternary permissions and threat topology
 - [BENCHMARKING-TERNARY.md](BENCHMARKING-TERNARY.md) — Reproducible methodology for the 16× claim
 - [DEBUGGING-AND-TRACING.md](DEBUGGING-AND-TRACING.md) — Following intent through five layers
 - [HOW-TO-FLEX.md](HOW-TO-FLEX.md) — Using openmind's muscle memory API
