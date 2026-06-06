@@ -58,6 +58,8 @@ Every document follows the chain-reaction pattern:
 - [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding your own crates to the fleet
 
 ### Meta-Documentation
+- [GLOSSARY.md](GLOSSARY.md) — 23 terms that unlock the entire ecosystem
+- [VERSIONING-AND-COMPATIBILITY.md](VERSIONING-AND-COMPATIBILITY.md) — 303 crates, one moving target
 - [LOOM-TAPESTRY.md](LOOM-TAPESTRY.md) — Why documentation is the deepest engineering
 - [FLUID-CHAINS.md](FLUID-CHAINS.md) — Every node decides; model↔code boundary dissolves
 - [CELLULAR-JUPYTER.md](CELLULAR-JUPYTER.md) — Jupyter as a cellular computation fabric
