@@ -21,6 +21,7 @@ Every document follows the chain-reaction pattern:
 ## Document Index
 
 ### Foundation (read first)
+- [THE-COMPILED-AGENCY-THESIS.md](THE-COMPILED-AGENCY-THESIS.md) — Why agents need compiled bodies, not just prompts
 - [AGENT-QUICKSTART.md](AGENT-QUICKSTART.md) — First contact: 5-minute onboarding path
 - [THE-AHA-MOMENT.md](THE-AHA-MOMENT.md) — The one thing that makes everything else click
 - [FIVE-LAYER-ARCHITECTURE.md](FIVE-LAYER-ARCHITECTURE.md) — The stack from async to GPU execution
@@ -36,6 +37,7 @@ Every document follows the chain-reaction pattern:
 - [AGENT-TO-AGENT-PROTOCOL.md](AGENT-TO-AGENT-PROTOCOL.md) — Ternary signals replace message passing
 
 ### The Ternary Fleet
+- [EDGE-CASES-AND-BOUNDARIES.md](EDGE-CASES-AND-BOUNDARIES.md) — Where Z₃ gets interesting
 - [THE-PACKED-FORMAT.md](THE-PACKED-FORMAT.md) — How 20 trits fit in 32 bits, the 2-bit encoding
 - [TERNARY-NUMBERS.md](TERNARY-NUMBERS.md) — Why {-1, 0, +1} is the most powerful three symbols
 - [FLEET-MAP.md](FLEET-MAP.md) — 303 crates, their relationships, and how to navigate them
