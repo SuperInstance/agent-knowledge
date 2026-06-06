@@ -50,6 +50,8 @@ Every document follows the chain-reaction pattern:
 - [FLUX-TO-PTX.md](FLUX-TO-PTX.md) — The compilation pipeline from intent to silicon
 
 ### For Agent Builders
+- [TROUBLESHOOTING.md](TROUBLESHOOTING.md) — When the ternary world does not make sense
+- [THE-CLI-REFERENCE.md](THE-CLI-REFERENCE.md) — Command-line tools for agent operations
 - [INTEGRATING-WITH-EXISTING-ML.md](INTEGRATING-WITH-EXISTING-ML.md) — Ternary weights in PyTorch and TensorFlow
 - [MIGRATING-TO-TERNARY.md](MIGRATING-TO-TERNARY.md) — Porting binary code to {-1, 0, +1}
 - [SECURITY-MODEL.md](SECURITY-MODEL.md) — Ternary permissions and threat topology
