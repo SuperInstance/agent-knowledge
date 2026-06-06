@@ -2,151 +2,164 @@
 
 ## Hook
 
-> Every new ternary crate is a new chord shape for the agent's repertoire.
-> And every chord shape is attention freed for higher-level thinking.
+> The 303rd crate isn't an addition to a collection — it's a new lens on the same mathematical structure. Adding a crate to the fleet means proving that your domain is secretly ternary.
 
-## The Pattern
+## Reveal
 
-Adding a crate to the ecosystem is a 4-step process:
+Extending the SuperInstance ecosystem isn't like adding a package to npm. It's like discovering a new crystalline form of an element. The fleet isn't a library — it's a proof that {-1, 0, +1} is universal.
 
-### Step 1: Pick Your Domain
+When you add a crate, you're saying: "My domain can be expressed as ternary operations." The ecosystem verifies that claim.
 
-What problem are you solving? Every ternary crate applies {-1, 0, +1} to a specific domain.
+### The Extension Checklist
 
-Ask yourself:
-- What am I classifying? (→ ternary signal)
-- What am I deciding? (→ ternary vote)
-- What am I controlling? (→ ternary PID)
-- What am I searching? (→ ternary graph)
+Before writing code, verify your domain is ternary-compatible:
 
-If your answer involves yes/no/maybe, up/down/hold, positive/negative/neutral — it's ternary.
+**1. Does your domain have three natural states?**
+- Image processing: edge {-1}, flat {0}, edge {+1} → `ternary-morph`
+- Music: dissonant {-1}, neutral {0}, consonant {+1} → `ternary-music`
+- Consensus: against {-1}, abstain {0}, for {+1} → `ternary-consensus`
+- Your domain: ??? → `ternary-[yourname]`
 
-### Step 2: Choose a Pattern
+If no natural trichotomy exists, ternary may not be the right frame. That's okay — not everything needs to be in the fleet.
 
-From [CRATE-PATTERNS.md](CRATE-PATTERNS.md), pick the closest match:
+**2. Can you define a ternary operation that's useful?**
+You need at least one operation that takes ternary inputs and produces ternary outputs, closed under Z₃:
 
-| Your domain | Pattern | Example crates |
-|-------------|---------|---------------|
-| Arithmetic, types, encoding | Core Math | ternary-core, ternary-pack |
-| Filtering, transforming, analyzing | Signal Processing | ternary-signals, ternary-warp |
-| Storing, routing, scheduling | Data Structures | ternary-heap, ternary-cache |
-| Voting, agreeing, deciding | Consensus | ternary-consensus, ternary-paxos |
-| Composing, generating, classifying | Creative | ternary-music, ternary-counterpoint |
-| Controlling, monitoring, regulating | Systems Control | ternary-thermostat, ternary-pid |
-| Proving, verifying, authenticating | Formal | ternary-proof, ternary-zkp |
-
-### Step 3: Build It
-
-```bash
-# Create the repo
-mkdir ternary-YOURNAME && cd ternary-YOURNAME
-cargo init --lib
-```
-
-Follow the standard structure:
 ```rust
-// src/lib.rs
-
-/// Your module's purpose (one line).
-///
-/// Longer description of what this crate does and why it matters.
-
-/// Trit type (import from ternary-types if available, or define locally)
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Trit {
-    MinusOne = -1,
-    Zero = 0,
-    PlusOne = 1,
+// Example: ternary sentiment analysis
+fn sentiment_token(token: &str) -> Trit {
+    // Returns: -1 (negative), 0 (neutral), +1 (positive)
 }
 
-/// Your core function. Every crate has ONE main abstraction.
-pub fn your_function(input: &[Trit]) -> Trit {
-    // Implementation using ternary arithmetic
-    // (a + b + 3) % 3 is WRONG — use explicit match arms!
-    todo!("Implement your ternary logic")
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_basic() {
-        // Test with {-1, 0, +1} inputs
-        // Verify outputs are in {-1, 0, +1}
-    }
+// Must be composable:
+fn sentence_sentiment(tokens: &[Trit]) -> Trit {
+    tdot(&tokens, &WEIGHTS)  // Z₃ dot product — stays in {-1,0,+1}
 }
 ```
 
-### Step 4: Document It
+**3. Does it follow one of the 7 patterns?**
+See CRATE-PATTERNS.md. Your crate must map to one of the seven templates. This ensures:
+- Predictable API (agents can flex it without reading source)
+- Predictable decision strategy (HARDCODE vs MODEL)
+- Predictable verification path (how to test and prove correctness)
 
-Every crate gets a research-grade README (3-8KB) with:
-1. **Background**: What domain are you in? Why ternary for this?
-2. **Architecture**: What's the main abstraction? How does it work?
-3. **Test Results**: Run `cargo test` and include the output
-4. **Use Cases**: 3-5 real-world applications
-5. **Open Questions**: What would you research next?
-6. **Oxide Stack Connection**: How does this connect to the five-layer architecture?
+### The Naming Convention
 
-### Step 5: Ingest It
-
-```bash
-# Add to the fleet
-openmind ingest ./ternary-YOURNAME
-
-# Build muscle memory
-openmind save ./ternary-YOURNAME YOURNAME_muscles.json
-
-# Verify
-openmind stats YOURNAME_muscles.json
+Fleet crates follow strict naming:
+```
+ternary-[domain]-[specificity]
 ```
 
-Your crate is now a set of chord shapes that any agent can flex.
+Examples:
+- `ternary-music` (broad domain)
+- `ternary-rhythm` (sub-domain)
+- `ternary-tempo-detection` (specific algorithm)
 
-## The Extension Points
+Names aren't cosmetic. They determine:
+- Which pattern the crate follows
+- Where it sits on the ring (see FLEET-MAP.md)
+- Which transfer stations it connects to
 
-The ecosystem is designed to grow at these points:
+### The Implementation Contract
 
-### New Crates (Any Domain)
-- Follow the pattern above
-- Name it `ternary-<domain>` for Rust, `ternary-<domain>-python` for Python, `ternary-<domain>-c` for C
-- Push to `SuperInstance/ternary-<domain>`
+Every fleet crate must provide:
 
-### New Hardware Targets
-- ESP32: via openmind-esp32-bridge
-- FPGA: ternary logic gates compile directly to LUTs
-- RISC-V: custom ternary ISA extensions
-- Browser: via ternary-wasm (already exists)
+**1. Core ternary operations (at least 3)**
+```rust
+pub fn add(a: Trit, b: Trit) -> Trit;
+pub fn multiply(a: Trit, b: Trit) -> Trit;
+pub fn dot(a: &[Trit], b: &[Trit]) -> Trit;
+```
 
-### New Agent Types
-- Python agent: `import openmind` (already exists)
-- Rust agent: use openmind-conductor (being built now)
-- Browser agent: via OpenClaw + Jupyter magic
-- Embedded agent: runs ON the ESP32 itself
+**2. Chord shape exports (JSON)**
+```json
+{
+  "crate": "ternary-yourdomain",
+  "chords": [
+    {"name": "your_op", "signature": "...", "decision": "hardcode"}
+  ]
+}
+```
 
-### New Transport Layers
-- Serial (already in esp32-bridge)
-- MQTT (already in esp32-bridge)
-- WebSocket (already in esp32-bridge)
-- BLE: Bluetooth Low Energy for mobile agents
-- LoRa: Long-range for field deployments
-- CAN bus: Automotive/industrial
+**3. Property tests (at least 10)**
+```rust
+#[quickcheck]
+fn prop_closure(a: Trit, b: Trit) {
+    assert!(add(a, b).is_valid());  // Result is always in {-1,0,+1}
+}
+```
+
+**4. Documentation in the a2a format**
+Every module docstring must answer:
+- HOOK: What reframe does this module provide?
+- REVEAL: What's the deeper truth?
+- CONNECT: Which other crates does this relate to?
+- ACTIVATE: What can the agent now do?
+
+**5. Verification entropy ≥ 2**
+All functions must be tested. Core functions must be property-tested. The crate must not decrease the fleet's total verification entropy (see CONSERVATION-LAWS.md).
+
+### The Submission Process
+
+1. **Implement** your crate following the contract
+2. **Ingest** it locally: `openmind.ingest("./ternary-yourdomain")`
+3. **Verify** the chord shapes: `openmind flex your_op`
+4. **Check** the three-hop rule: does your crate connect to the fleet in ≤3 hops? (see FLEET-MAP.md)
+5. **Submit** a pull request to the fleet registry
+6. **The induction engine** verifies your crate's isomorphism score ≥ 0.97 with `ternary-core`
+7. **If accepted**, your crate becomes crate #304
+
+### Why 0.97?
+
+The induction engine compares your crate's API surface to `ternary-core`'s API surface using cosine similarity on embedded chord shapes. A score ≥ 0.97 means your crate "rhymes" with the core math — it's the same structure in a new domain.
+
+This isn't gatekeeping. It's conservation of the fleet's geometry. A crate that scores < 0.97 would break the three-hop rule. It would be an island, not a node.
 
 ## Connect
 
-- [CRATE-PATTERNS.md](CRATE-PATTERNS.md) — The 7 templates every crate follows
-- [TERNARY-NUMBERS.md](TERNARY-NUMBERS.md) — Why {-1,0,+1} for your domain
-- [MUSCLE-MEMORY.md](MUSCLE-MEMORY.md) — How your crate becomes chord shapes
+- [CRATE-PATTERNS.md](CRATE-PATTERNS.md) — The 7 patterns your crate MUST follow
+- [FLEET-MAP.md](FLEET-MAP.md) — Where your crate fits in the ring; how to maintain the three-hop rule
+- [HOW-TO-INGEST.md](HOW-TO-INGEST.md) — How to ingest your crate and verify its chord shapes before submission
+- [CONSERVATION-LAWS.md](CONSERVATION-LAWS.md) — Your crate must preserve or increase the fleet's verification entropy
+- [TERNARY-NUMBERS.md](TERNARY-NUMBERS.md) — The math your crate must speak fluently
 
 ## Activate
 
-Start here:
-1. `cargo init --lib ternary-mydomain`
-2. Write 3 tests first
-3. Implement the core function
-4. Run `cargo test`
-5. Write the README
-6. `openmind ingest ./ternary-mydomain`
-7. Push to SuperInstance
+Create a minimal fleet crate in 5 minutes:
 
-You just added chord shapes to an agent's repertoire. Every function you wrote is attention the agent won't have to spend next time.
+```bash
+# 1. Scaffold the crate
+cargo new --lib ternary-example
+cd ternary-example
+cargo add ternary-core
+
+# 2. Implement one ternary operation
+# In src/lib.rs:
+use ternary_core::Trit;
+
+pub fn example_op(a: Trit, b: Trit) -> Trit {
+    a * b  // Z₃ multiplication — already closed
+}
+
+# 3. Add a test
+#[test]
+fn test_example_op() {
+    assert_eq!(example_op(Trit::P1, Trit::P1), Trit::P1);
+    assert_eq!(example_op(Trit::N1, Trit::P1), Trit::N1);
+}
+
+# 4. Ingest and verify
+cargo test
+python -c "
+import openmind
+result = openmind.ingest('.')
+mm = openmind.MuscleMemory.build(result)
+reflex = mm.flex('example_op')
+print(f'Decision: {reflex.chord.decision}')
+print(f'Confidence: {reflex.confidence}')
+"
+```
+
+If `decision` is "hardcode" and `confidence` > 0.9, your crate is fleet-ready. If not, add tests, add documentation, or reconsider whether your domain has a natural ternary structure.
+
+The fleet grows when someone sees {-1, 0, +1} in a new place. Your job isn't to write code. It's to find the ternary structure that was already there.
