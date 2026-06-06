@@ -2,144 +2,169 @@
 
 ## Hook
 
-> Any codebase — Rust, Python, C, JavaScript — becomes muscle memory in 3 seconds.
+> A codebase without muscle memory is a library you can read but can't use. Ingestion is the act of turning static text into live reflexes.
 
-## The Ingestion Pipeline
+## Reveal
+
+Ingestion is the gateway to the entire SuperInstance ecosystem. It's how raw code becomes flexable capability. Without it, the agent is a tourist reading signs. With it, the agent is a local who knows every shortcut.
+
+### What Ingestion Actually Does
 
 ```
-Source Code → File Discovery → Language Detection → AST Parsing → Extraction → Indexing
+Source Code → Parse → Analyze → Compress → Index → Chord Shapes
 ```
 
-### Step 1: File Discovery
+**Parse:** The ingester reads every file in the codebase and builds an AST. It handles Rust, Python, C, C++, and any language tree-sitter supports.
+
+**Analyze:** For every function, it extracts:
+- Name and module path
+- Signature (parameters, return type)
+- Docstring / comments
+- Test coverage (does this function have tests?)
+- Call graph (who calls this function?)
+- Decision hint (is this deterministic? safety-critical? creative?)
+
+**Compress:** The full function body (200+ tokens) is compressed into a chord shape (~5 tokens):
+```json
+{
+  "name": "spi_write",
+  "module": "drivers.spi",
+  "signature": "fn spi_write(data: &[u8]) -> Result<()>",
+  "decision": "hardcode",
+  "docstring_summary": "Write data to SPI bus",
+  "has_tests": true,
+  "confidence": 0.95
+}
+```
+
+**Index:** Chord shapes are indexed by:
+- Exact name (O(1) lookup)
+- Fuzzy name matching (Levenshtein distance)
+- Keyword embedding (semantic similarity)
+- Module hierarchy (namespace search)
+
+### The Ingestion API
 
 ```python
-result = openmind.ingest("./my-repo")
+import openmind
+
+# Ingest a local directory
+result = openmind.ingest("./my-firmware")
+
+# Ingest a remote repository
+result = openmind.ingest("https://github.com/SuperInstance/ternary-core")
+
+# Ingest with custom configuration
+result = openmind.ingest("./my-project", config={
+    "languages": ["rust", "python"],
+    "exclude": ["tests/", "target/"],
+    "min_test_coverage": 0.8,
+    "require_docstrings": True
+})
 ```
 
-The ingester walks the directory tree, skipping:
-- `.git/`, `target/`, `node_modules/`, `__pycache__/`
-- Build artifacts, configuration files, assets
-- Only processes source files (.py, .rs, .c, .h, .cpp, .js, .ts)
+The `result` object contains:
+- `result.chords`: list of all chord shapes
+- `result.stats`: function count, test coverage, language breakdown
+- `result.graph`: call graph as adjacency list
+- `result.errors`: files that failed to parse (rare but important)
 
-### Step 2: Language Detection
+### Quality Gates
 
-File extension → parser selection:
-- `.py` → Python AST (built-in `ast` module, always available)
-- `.rs` → tree-sitter-rust (optional, requires `[tree-sitter]` extra)
-- `.c/.h` → tree-sitter-c
-- `.cpp/.hpp` → tree-sitter-cpp
-- `.js` → tree-sitter-javascript
-- `.ts` → tree-sitter-typescript
+Not every function becomes a chord shape. The ingester applies quality gates:
 
-**Fallback**: If tree-sitter isn't installed, only Python files are parsed. The system still works — just with fewer languages.
+| Gate | Purpose | What Gets Filtered Out |
+|------|---------|----------------------|
+| Parseable | Must produce valid AST | Macro-generated code, incomplete files |
+| Documented | Must have docstring or comment | Internal helpers, auto-generated getters |
+| Tested | Should have tests (optional) | Experimental code, WIP features |
+| Deterministic | Must not be I/O-bound (for HARDCODE) | Functions that read files, make network calls |
 
-### Step 3: AST Parsing
+A function that fails a gate isn't lost — it's just indexed with lower confidence or tagged as MODEL instead of HARDCODE.
 
-For each source file, the parser extracts:
+### Language-Specific Parsing
 
-**Functions:**
-```python
-FunctionInfo(
-    name="process_data",
-    module="pipeline.processor",
-    file_path="pipeline/processor.py",
-    line_start=42,
-    line_end=67,
-    signature="def process_data(data: list[dict], threshold: float = 0.5) -> list[dict]",
-    docstring="Process raw sensor data through the cleaning pipeline.",
-    arg_names=["data", "threshold"],
-    arg_types={"data": "list[dict]", "threshold": "float"},
-    return_type="list[dict]",
-    calls=["clean", "filter", "normalize", "validate"],
-    called_by=[],  # Filled in later
-    has_tests=False,  # Filled in later
-)
+**Rust:**
+- Uses `rust-analyzer` syntax tree
+- Extracts `pub fn` items, trait implementations, `impl` blocks
+- Identifies `unsafe` blocks and marks them as requiring MODEL deliberation
+- Reads `Cargo.toml` for dependency graph
+
+**Python:**
+- Uses tree-sitter Python grammar
+- Extracts module-level functions, class methods, properties
+- Identifies `async def` and marks them for open-parallel scheduling
+- Reads `requirements.txt` / `pyproject.toml` for dependencies
+
+**C/C++:**
+- Uses tree-sitter C/C++ grammars
+- Extracts functions with external linkage
+- Identifies `static` functions as internal chords (not flexed directly)
+- Reads headers for type information
+
+### The Chord Shape Quality Score
+
+Each chord gets a quality score (0.0 to 1.0):
+
+```
+score = 0.3 * parse_confidence
+      + 0.2 * documentation_coverage
+      + 0.2 * test_coverage
+      + 0.15 * call_graph_centrality
+      + 0.15 * signature_clarity
 ```
 
-**Classes:**
-```python
-ClassInfo(
-    name="DataProcessor",
-    module="pipeline.processor",
-    methods=["__init__", "process", "validate", "export"],
-    bases=["BaseProcessor"],
-    docstring="Main data processing class with validation pipeline.",
-)
-```
+- Score ≥ 0.9: HARDCODE candidate
+- Score 0.7-0.9: HYBRID candidate
+- Score 0.5-0.7: CACHED candidate
+- Score < 0.5: MODEL only
 
-### Step 4: Call Graph Resolution
-
-After parsing all files, the ingester:
-1. Builds a global call graph: `caller → [callees]`
-2. Resolves reverse references: `callee → [callers]` (who calls this?)
-3. This enables "degree" calculation — how connected each function is
-
-High-connectivity functions (called by 5+) get HARDCODE decisions.
-Low-connectivity functions (called by 0-1) get MODEL/HYBRID.
-
-### Step 5: Test Detection
-
-Heuristic: a file is a test file if:
-- Name starts with `test_` or ends with `_test.py`
-- Name starts with `test_` or ends with `.rs` in a `tests/` directory
-- Contains `assert`, `#[test]`, `def test_`
-
-Functions whose names appear in test files (via regex search) get `has_tests=True`.
-
-Tested functions get higher confidence scores in their Reflexes.
-
-### Step 6: Muscle Memory Build
-
-```python
-mm = openmind.MuscleMemory.build(result)
-```
-
-For each extracted function:
-1. Extract intent keywords (name parts, arg names, docstring words, called functions)
-2. Run tripartite synchronizer with default profiles
-3. Hash the source code for change detection
-4. Compress into a Chord shape (name, module, signature, decision, keywords)
-
-## What You Get
-
-```python
-mm.stats()
-# {
-#   'total_chords': 58,
-#   'muscle_memory': 42,     # HARDCODE + CACHED
-#   'needs_thinking': 16,    # MODEL + HYBRID
-#   'tested': 23,
-#   'untested': 35,
-#   'decision_breakdown': {'hardcode': 30, 'cached': 12, 'hybrid': 10, 'model': 6}
-# }
-```
-
-## Ingestion Time
-
-| Repo Size | Files | Parse Time | Build Time | Total |
-|-----------|-------|-----------|-----------|-------|
-| Small (1-10 files) | 5 | 0.1s | 0.05s | 0.15s |
-| Medium (10-100) | 50 | 0.5s | 0.3s | 0.8s |
-| Large (100-1000) | 300 | 3s | 1.5s | 4.5s |
-| Fleet (300+ crates) | 1000+ | 10s | 5s | 15s |
-
-The entire 303-crate ternary fleet ingests in ~15 seconds. After that, it's saved to JSON and loads instantly.
+This score is what the tripartite synchronizer uses as its initial input before considering hardware, application, and user profiles.
 
 ## Connect
 
-- [HOW-TO-FLEX.md](HOW-TO-FLEX.md) — What to do with the ingested data
-- [TERNARY-NUMBERS.md](TERNARY-NUMBERS.md) — Why the fleet ingests so cleanly
-- [CONTEXT-WINDOW-ECONOMICS.md](CONTEXT-WINDOW-ECONOMICS.md) — The token savings from ingestion
+- [HOW-TO-FLEX.md](HOW-TO-FLEX.md) — What to do AFTER ingestion: building muscle memory and flexing chords
+- [MUSCLE-MEMORY.md](MUSCLE-MEMORY.md) — The theory behind chord shapes and why compression matters
+- [CRATE-PATTERNS.md](CRATE-PATTERNS.md) — Predicting chord shapes before you ingest: the 7 patterns tell you what to expect
+- [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding new crates to the fleet: ingestion is the first step
+- [CONTEXT-WINDOW-ECONOMICS.md](CONTEXT-WINDOW-ECONOMICS.md) — Why ingestion saves 50:1 on context tokens
 
 ## Activate
 
-```bash
-# CLI
-openmind ingest ./any-repo
+Ingest your first codebase and inspect the results:
 
-# Python
+```python
 import openmind
-result = openmind.ingest("./any-repo")
+
+result = openmind.ingest(".")  # Ingest the current directory
+
+# See what you've got
+print(f"Functions: {len(result.chords)}")
+print(f"Coverage: {result.stats.test_coverage:.1%}")
+
+# Find the highest-quality chords
+best = sorted(result.chords, key=lambda c: c.quality_score, reverse=True)[:10]
+for chord in best:
+    print(f"{chord.name}: {chord.quality_score:.2f} ({chord.decision})")
+
+# Build muscle memory
 mm = openmind.MuscleMemory.build(result)
-mm.save("repo_muscles.json")
+mm.save("my_project_muscles.json")
+
+# Now flex — zero tokens spent on understanding
+reflex = mm.flex(best[0].name)
+print(reflex.chord.signature)
 ```
+
+To ingest at scale (the full fleet):
+```python
+import openmind
+import glob
+
+for repo in glob.glob("ternary-*/"):
+    result = openmind.ingest(repo)
+    mm = openmind.MuscleMemory.build(result)
+    mm.save(f"muscles/{repo.replace('/', '')}.json")
+```
+
+After running this, you have 303 muscle memory files. The agent can navigate the entire fleet without reading a single `src/lib.rs`.
