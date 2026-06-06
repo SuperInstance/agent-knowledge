@@ -50,6 +50,7 @@ Every document follows the chain-reaction pattern:
 - [FLUX-TO-PTX.md](FLUX-TO-PTX.md) — The compilation pipeline from intent to silicon
 
 ### For Agent Builders
+- [INTEGRATING-WITH-EXISTING-ML.md](INTEGRATING-WITH-EXISTING-ML.md) — Ternary weights in PyTorch and TensorFlow
 - [MIGRATING-TO-TERNARY.md](MIGRATING-TO-TERNARY.md) — Porting binary code to {-1, 0, +1}
 - [SECURITY-MODEL.md](SECURITY-MODEL.md) — Ternary permissions and threat topology
 - [BENCHMARKING-TERNARY.md](BENCHMARKING-TERNARY.md) — Reproducible methodology for the 16× claim
@@ -60,6 +61,7 @@ Every document follows the chain-reaction pattern:
 - [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding your own crates to the fleet
 
 ### Meta-Documentation
+- [THE-ROADMAP.md](THE-ROADMAP.md) — Where the fleet is going
 - [CASE-STUDIES.md](CASE-STUDIES.md) — Ternary in the wild: three real deployments
 - [DESIGN-PRINCIPLES.md](DESIGN-PRINCIPLES.md) — The seven rules that govern every decision
 - [PERFORMANCE-OPTIMIZATION.md](PERFORMANCE-OPTIMIZATION.md) — Making ternary code fly
