@@ -50,8 +50,10 @@ Every document follows the chain-reaction pattern:
 
 ### Hardware Bridge
 - [ESP32-AS-BODY.md](ESP32-AS-BODY.md) — The microcontroller is the agent's hand
+- [EMBODIED-AI.md](EMBODIED-AI.md) — Intelligence distributed across body, GPU, and host
 - [GPU-AS-MOTOR-CORTEX.md](GPU-AS-MOTOR-CORTEX.md) — Ternary on metal: 16x denser than FP32
 - [FLUX-TO-PTX.md](FLUX-TO-PTX.md) — The compilation pipeline from intent to silicon
+- [DISTRIBUTED-COMPUTE-GRAPH.md](DISTRIBUTED-COMPUTE-GRAPH.md) — Execution graphs that span agents and failure domains
 
 ### For Agent Builders
 - [VISUALIZING-TERNARY-DATA.md](VISUALIZING-TERNARY-DATA.md) — Making {-1, 0, +1} visible
