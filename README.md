@@ -65,6 +65,8 @@ Every document follows the chain-reaction pattern:
 - [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding your own crates to the fleet
 
 ### Meta-Documentation
+- [THE-IMPOSSIBILITY-PROOF.md](THE-IMPOSSIBILITY-PROOF.md) — What ternary cannot do
+- [AGENT-SELF-ASSESSMENT.md](AGENT-SELF-ASSESSMENT.md) — How to audit your own understanding
 - [ANTI-PATTERNS.md](ANTI-PATTERNS.md) — What not to do in ternary systems
 - [THE-MANIFESTO.md](THE-MANIFESTO.md) — Why we build this way
 - [THE-COOKBOOK.md](THE-COOKBOOK.md) — 12 recipes for common ternary tasks
