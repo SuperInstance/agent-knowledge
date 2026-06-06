@@ -63,6 +63,8 @@ Every document follows the chain-reaction pattern:
 - [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding your own crates to the fleet
 
 ### Meta-Documentation
+- [GOVERNANCE-AND-COMMUNITY.md](GOVERNANCE-AND-COMMUNITY.md) — How the ecosystem decides
+- [PRIVACY-IN-TERNARY-SYSTEMS.md](PRIVACY-IN-TERNARY-SYSTEMS.md) — Obfuscation by structure
 - [THE-ROADMAP.md](THE-ROADMAP.md) — Where the fleet is going
 - [CASE-STUDIES.md](CASE-STUDIES.md) — Ternary in the wild: three real deployments
 - [DESIGN-PRINCIPLES.md](DESIGN-PRINCIPLES.md) — The seven rules that govern every decision
