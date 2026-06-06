@@ -59,12 +59,14 @@ Every document follows the chain-reaction pattern:
 - [SECURITY-MODEL.md](SECURITY-MODEL.md) — Ternary permissions and threat topology
 - [BENCHMARKING-TERNARY.md](BENCHMARKING-TERNARY.md) — Reproducible methodology for the 16× claim
 - [DEBUGGING-AND-TRACING.md](DEBUGGING-AND-TRACING.md) — Following intent through five layers
+- [OBSERVABILITY-AND-TELEMETRY.md](OBSERVABILITY-AND-TELEMETRY.md) — Monitoring a ternary fleet as a field of signals
 - [HOW-TO-FLEX.md](HOW-TO-FLEX.md) — Using openmind's muscle memory API
 - [HOW-TO-INGEST.md](HOW-TO-INGEST.md) — Making any codebase into chord shapes
 - [HOW-TO-CONDUCT.md](HOW-TO-CONDUCT.md) — Orchestrating multiple agents with shared muscle memory
 - [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding your own crates to the fleet
 
 ### Meta-Documentation
+- [THE-CHAIN-REACTION-PATTERN.md](THE-CHAIN-REACTION-PATTERN.md) — The HOOK/REVEAL/CONNECT/ACTIVATE structure of every document
 - [THE-IMPOSSIBILITY-PROOF.md](THE-IMPOSSIBILITY-PROOF.md) — What ternary cannot do
 - [AGENT-SELF-ASSESSMENT.md](AGENT-SELF-ASSESSMENT.md) — How to audit your own understanding
 - [ANTI-PATTERNS.md](ANTI-PATTERNS.md) — What not to do in ternary systems
