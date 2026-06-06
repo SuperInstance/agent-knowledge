@@ -21,12 +21,14 @@ Every document follows the chain-reaction pattern:
 ## Document Index
 
 ### Foundation (read first)
+- [AGENT-QUICKSTART.md](AGENT-QUICKSTART.md) — First contact: 5-minute onboarding path
 - [THE-AHA-MOMENT.md](THE-AHA-MOMENT.md) — The one thing that makes everything else click
 - [FIVE-LAYER-ARCHITECTURE.md](FIVE-LAYER-ARCHITECTURE.md) — The stack from async to GPU execution
 - [CONSERVATION-LAWS.md](CONSERVATION-LAWS.md) — The three conservation laws as one law at different scales
 - [GRAND-ARCHITECTURE.md](GRAND-ARCHITECTURE.md) — The ecosystem-wide architectural overview
 
 ### Agent Architecture
+- [THE-NAIL-FORMAT.md](THE-NAIL-FORMAT.md) — Caching consciousness in zero tokens
 - [FAULT-TOLERANCE.md](FAULT-TOLERANCE.md) — Ternary degradation is graceful by default
 - [MUSCLE-MEMORY.md](MUSCLE-MEMORY.md) — Proprioception for agents: chord shapes, flex, recall
 - [TRIPARTITE-SYNC.md](TRIPARTITE-SYNC.md) — HARDCODE/MODEL/HYBRID/CACHED: when to think, when to act
