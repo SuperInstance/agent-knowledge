@@ -59,6 +59,7 @@ Every document follows the chain-reaction pattern:
 - [VISUALIZING-TERNARY-DATA.md](VISUALIZING-TERNARY-DATA.md) — Making {-1, 0, +1} visible
 - [COST-ECONOMICS.md](COST-ECONOMICS.md) — The dollar math of ternary computing
 - [CONSTRUCT-ECONOMICS.md](CONSTRUCT-ECONOMICS.md) — Markets, pricing, and value flow for agent-generated capabilities
+- [FAILURE-MODES.md](FAILURE-MODES.md) — A catalog of how ternary systems fail
 - [TROUBLESHOOTING.md](TROUBLESHOOTING.md) — When the ternary world does not make sense
 - [THE-CLI-REFERENCE.md](THE-CLI-REFERENCE.md) — Command-line tools for agent operations
 - [MULTI-MODALITY.md](MULTI-MODALITY.md) — Thinking in vision, audio, text, and proprioception
@@ -84,6 +85,7 @@ Every document follows the chain-reaction pattern:
 - [THE-COOKBOOK.md](THE-COOKBOOK.md) — 12 recipes for common ternary tasks
 - [FAQ.md](FAQ.md) — Questions agents actually ask
 - [GOVERNANCE-AND-COMMUNITY.md](GOVERNANCE-AND-COMMUNITY.md) — How the ecosystem decides
+- [HUMAN-IN-THE-LOOP.md](HUMAN-IN-THE-LOOP.md) — Tiered human involvement based on confidence and stakes
 - [PRIVACY-IN-TERNARY-SYSTEMS.md](PRIVACY-IN-TERNARY-SYSTEMS.md) — Obfuscation by structure
 - [THE-ROADMAP.md](THE-ROADMAP.md) — Where the fleet is going
 - [CASE-STUDIES.md](CASE-STUDIES.md) — Ternary in the wild: three real deployments
