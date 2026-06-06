@@ -27,12 +27,14 @@ Every document follows the chain-reaction pattern:
 - [GRAND-ARCHITECTURE.md](GRAND-ARCHITECTURE.md) — The ecosystem-wide architectural overview
 
 ### Agent Architecture
+- [FAULT-TOLERANCE.md](FAULT-TOLERANCE.md) — Ternary degradation is graceful by default
 - [MUSCLE-MEMORY.md](MUSCLE-MEMORY.md) — Proprioception for agents: chord shapes, flex, recall
 - [TRIPARTITE-SYNC.md](TRIPARTITE-SYNC.md) — HARDCODE/MODEL/HYBRID/CACHED: when to think, when to act
 - [CONTEXT-WINDOW-ECONOMICS.md](CONTEXT-WINDOW-ECONOMICS.md) — Attention is the scarce resource
 - [AGENT-TO-AGENT-PROTOCOL.md](AGENT-TO-AGENT-PROTOCOL.md) — Ternary signals replace message passing
 
 ### The Ternary Fleet
+- [THE-PACKED-FORMAT.md](THE-PACKED-FORMAT.md) — How 20 trits fit in 32 bits, the 2-bit encoding
 - [TERNARY-NUMBERS.md](TERNARY-NUMBERS.md) — Why {-1, 0, +1} is the most powerful three symbols
 - [FLEET-MAP.md](FLEET-MAP.md) — 303 crates, their relationships, and how to navigate them
 - [CRATE-PATTERNS.md](CRATE-PATTERNS.md) — Every crate follows one of 7 patterns. Learn them.
