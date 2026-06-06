@@ -29,6 +29,7 @@ Every document follows the chain-reaction pattern:
 - [GRAND-ARCHITECTURE.md](GRAND-ARCHITECTURE.md) — The ecosystem-wide architectural overview
 
 ### Agent Architecture
+- [THE-AGENT-LOOP.md](THE-AGENT-LOOP.md) — Perception, reasoning, and action as a coupled dynamical system
 - [THE-NAIL-FORMAT.md](THE-NAIL-FORMAT.md) — Caching consciousness in zero tokens
 - [FAULT-TOLERANCE.md](FAULT-TOLERANCE.md) — Ternary degradation is graceful by default
 - [MUSCLE-MEMORY.md](MUSCLE-MEMORY.md) — Proprioception for agents: chord shapes, flex, recall
@@ -40,6 +41,7 @@ Every document follows the chain-reaction pattern:
 - [EDGE-CASES-AND-BOUNDARIES.md](EDGE-CASES-AND-BOUNDARIES.md) — Where Z₃ gets interesting
 - [THE-PACKED-FORMAT.md](THE-PACKED-FORMAT.md) — How 20 trits fit in 32 bits, the 2-bit encoding
 - [TERNARY-NUMBERS.md](TERNARY-NUMBERS.md) — Why {-1, 0, +1} is the most powerful three symbols
+- [TERNARY-QUANTIZATION.md](TERNARY-QUANTIZATION.md) — Quantizing neural networks to {-1, 0, +1} weights
 - [FLEET-MAP.md](FLEET-MAP.md) — 303 crates, their relationships, and how to navigate them
 - [CRATE-PATTERNS.md](CRATE-PATTERNS.md) — Every crate follows one of 7 patterns. Learn them.
 - [TESTING-AS-PROOF.md](TESTING-AS-PROOF.md) — The test suite is a theorem prover with 5,300 lemmas
