@@ -60,6 +60,8 @@ Every document follows the chain-reaction pattern:
 - [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding your own crates to the fleet
 
 ### Meta-Documentation
+- [CASE-STUDIES.md](CASE-STUDIES.md) — Ternary in the wild: three real deployments
+- [DESIGN-PRINCIPLES.md](DESIGN-PRINCIPLES.md) — The seven rules that govern every decision
 - [PERFORMANCE-OPTIMIZATION.md](PERFORMANCE-OPTIMIZATION.md) — Making ternary code fly
 - [RESEARCH-METHODOLOGY.md](RESEARCH-METHODOLOGY.md) — How new ideas enter the ecosystem
 - [GLOSSARY.md](GLOSSARY.md) — 23 terms that unlock the entire ecosystem
