@@ -65,6 +65,8 @@ Every document follows the chain-reaction pattern:
 - [HOW-TO-EXTEND.md](HOW-TO-EXTEND.md) — Adding your own crates to the fleet
 
 ### Meta-Documentation
+- [THE-COOKBOOK.md](THE-COOKBOOK.md) — 12 recipes for common ternary tasks
+- [FAQ.md](FAQ.md) — Questions agents actually ask
 - [GOVERNANCE-AND-COMMUNITY.md](GOVERNANCE-AND-COMMUNITY.md) — How the ecosystem decides
 - [PRIVACY-IN-TERNARY-SYSTEMS.md](PRIVACY-IN-TERNARY-SYSTEMS.md) — Obfuscation by structure
 - [THE-ROADMAP.md](THE-ROADMAP.md) — Where the fleet is going
